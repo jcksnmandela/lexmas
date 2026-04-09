@@ -289,7 +289,7 @@ export default function HomePage() {
                   <textarea value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} placeholder="Message" className="w-full p-3 border border-gray-300 rounded-lg h-32"></textarea>
                   {formErrors.message && <p className="text-red-500 text-sm">{formErrors.message}</p>}
                 </div>
-                <button type="submit" className="bg-green-900 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors">Send Message</button>
+                <button type="submit" className="bg-green-900 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors cursor-pointer">Send Message</button>
               </form>
             </section>
           </aside>
@@ -366,7 +366,7 @@ function ServiceBlock({ title, services, bgColor, link }: { title: string; servi
   );
 }
 
-function TestimonialItem({ name, feedback, key }: { name: string; feedback: string, key?: any }) {
+function TestimonialItem({ name, feedback, ...rest }: { name: string; feedback: string, [key: string]: any }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const limit = 100;
   const isLong = feedback.length > limit;
@@ -376,7 +376,7 @@ function TestimonialItem({ name, feedback, key }: { name: string; feedback: stri
         "{isExpanded ? feedback : feedback.substring(0, limit) + (isLong ? '...' : '')}"
       </p>
       {isLong && (
-        <button onClick={() => setIsExpanded(!isExpanded)} className="text-orange-600 font-bold text-sm hover:underline">
+        <button onClick={() => setIsExpanded(!isExpanded)} className="text-orange-600 font-bold text-sm hover:underline cursor-pointer">
           {isExpanded ? 'Read Less' : 'Read More'}
         </button>
       )}
@@ -400,7 +400,7 @@ function TestimonialForm({ onAdd }: { onAdd: (t: {name: string, feedback: string
       <h3 className="text-xl font-bold text-green-900 mb-4">Share Your Feedback</h3>
       <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-lg mb-2" required />
       <textarea value={feedback} onChange={e => setFeedback(e.target.value)} placeholder="Your Feedback" className="w-full p-3 border border-gray-300 rounded-lg h-24 mb-2" required></textarea>
-      <button type="submit" className="bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-green-800 transition-colors">Submit</button>
+      <button type="submit" className="bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-green-800 transition-colors cursor-pointer">Submit</button>
     </form>
   );
 }
