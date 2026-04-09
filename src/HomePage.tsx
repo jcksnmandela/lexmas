@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, useEffect } from 'react';
-import { Phone, CheckCircle, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, Search, ChevronRight, ArrowUp } from 'lucide-react';
+import { Phone, CheckCircle, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, Search, ChevronRight, ArrowUp, Briefcase, FileText, Calculator, TrendingUp, User, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
@@ -38,6 +38,7 @@ export default function HomePage() {
     setTestimonials([...testimonials, testimonial]);
   };
   const [filterCategory, setFilterCategory] = useState('All');
+  const [isTestimonialsExpanded, setIsTestimonialsExpanded] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
@@ -232,15 +233,22 @@ export default function HomePage() {
             </section>
 
             <section id="testimonials-section" className="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500">
-              <h2 className="text-3xl font-bold text-green-900 mb-8 border-b pb-2">What Our Clients Say</h2>
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                {testimonials.length > 0 ? (
-                  testimonials.map((t, i) => <TestimonialItem key={i} name={t.name} feedback={t.feedback} />)
-                ) : (
-                  <p className="text-gray-500 italic col-span-2">No testimonials yet. Be the first to share your feedback!</p>
-                )}
+              <div className="flex justify-between items-center cursor-pointer" onClick={() => setIsTestimonialsExpanded(!isTestimonialsExpanded)}>
+                <h2 className="text-3xl font-bold text-green-900 mb-8 border-b pb-2">What Our Clients Say</h2>
+                <ChevronRight className={`transition-transform ${isTestimonialsExpanded ? 'rotate-90' : ''}`} />
               </div>
-              <TestimonialForm onAdd={handleAddTestimonial} />
+              {isTestimonialsExpanded && (
+                <>
+                  <div className="grid md:grid-cols-2 gap-8 mb-8">
+                    {testimonials.length > 0 ? (
+                      testimonials.map((t, i) => <TestimonialItem key={i} name={t.name} feedback={t.feedback} />)
+                    ) : (
+                      <p className="text-gray-500 italic col-span-2">No testimonials yet. Be the first to share your feedback!</p>
+                    )}
+                  </div>
+                  <TestimonialForm onAdd={handleAddTestimonial} />
+                </>
+              )}
             </section>
           </div>
 
@@ -328,9 +336,12 @@ export default function HomePage() {
 function ServiceBlock({ title, services, bgColor, link }: { title: string; services: string[]; bgColor: string, link: string }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const getIcon = (service: string) => {
-    if (service.toLowerCase().includes('tax')) return <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
-    if (service.toLowerCase().includes('audit') || service.toLowerCase().includes('account')) return <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
-    return <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
+    const s = service.toLowerCase();
+    if (s.includes('tax')) return <Shield className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
+    if (s.includes('audit') || s.includes('account') || s.includes('financial')) return <Calculator className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
+    if (s.includes('consult') || s.includes('business') || s.includes('plan')) return <Briefcase className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
+    if (s.includes('payroll') || s.includes('hr')) return <User className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
+    return <FileText className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />;
   };
   return (
     <div className={`${bgColor} p-8 rounded-xl shadow-sm border border-gray-200 transition-all hover:shadow-lg hover:scale-[1.01]`}>
