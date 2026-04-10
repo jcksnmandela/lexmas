@@ -30,13 +30,33 @@ If you already have a hosting plan for **lexmas.org** (like cPanel, Bluehost, or
 5. Upload all files *inside* the `dist` folder to your `public_html` directory.
 6. *Note: I have added a `.htaccess` file in the `public` folder to ensure your pages (like /taxation) work correctly on Apache servers.*
 
-## 4. Connecting lexmas.org to Vercel/Netlify
-If you choose to use Vercel or Netlify (recommended for better speed):
-1. In their dashboard, go to **Add Domain**.
-2. Enter `lexmas.org`.
-3. They will give you **DNS Records** (usually an A record and a CNAME record).
-4. Log in to your domain registrar (where you bought lexmas.org).
-5. Update the DNS settings with the values provided.
-6. It may take up to 24 hours for the change to take effect (propagation).
+## 5. Detailed DNS Configuration
+To point **lexmas.org** to your new host, you need to update the DNS records at your domain registrar (e.g., GoDaddy, Namecheap, or a local provider).
 
-For further assistance, please refer to the documentation of your chosen hosting provider.
+### If using Vercel:
+1. **A Record:**
+   - Name/Host: `@`
+   - Value: `76.76.21.21`
+2. **CNAME Record:**
+   - Name/Host: `www`
+   - Value: `cname.vercel-dns.com`
+
+### If using Netlify:
+1. **CNAME Record:**
+   - Name/Host: `www`
+   - Value: `your-site-name.netlify.app`
+2. **ALias/ANAME Record (if supported):**
+   - Name/Host: `@`
+   - Value: `your-site-name.netlify.app`
+   *(Alternatively, use Netlify DNS by changing your Nameservers)*
+
+### General Steps:
+1. Log in to your **Domain Registrar's Control Panel**.
+2. Find the **DNS Management** or **Name Server Management** section.
+3. Look for **DNS Records** or **Zone File**.
+4. Add or Edit the records as shown above.
+5. **Save Changes**.
+6. **Wait:** It can take anywhere from 1 to 24 hours for these changes to "propagate" across the internet.
+
+## 6. SSL (HTTPS)
+Both Vercel and Netlify will automatically provide a free SSL certificate once your domain is correctly pointed. Your site will automatically be secure (`https://lexmas.org`).
