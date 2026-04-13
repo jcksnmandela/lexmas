@@ -142,7 +142,19 @@ export default function HomePage() {
       <header className="bg-white py-6 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
-            <img src="/logo.png" alt="Lexmas Logo" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 overflow-hidden">
+              <img 
+                src="/logo.png" 
+                alt="Lexmas Logo" 
+                className="w-full h-full object-contain p-1" 
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.parentElement!.innerHTML = '<div class="text-green-900 font-bold text-3xl">L</div>';
+                }}
+              />
+            </div>
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-green-900 leading-tight uppercase">LEXMAS COMPANY LIMITED</h1>
               <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">Tax and Financial Excellence</p>
