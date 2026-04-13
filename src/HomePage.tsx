@@ -142,7 +142,7 @@ export default function HomePage() {
       <header className="bg-white py-6 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center text-white font-bold text-2xl">L</div>
+            <img src="/logo.png" alt="Lexmas Logo" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-green-900 leading-tight uppercase">LEXMAS COMPANY LIMITED</h1>
               <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">Tax and Financial Excellence</p>
