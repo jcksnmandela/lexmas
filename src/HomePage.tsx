@@ -198,14 +198,6 @@ export default function HomePage() {
       <main className="max-w-7xl mx-auto px-4 py-10">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-3 space-y-10">
-            <section id="home" className="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500">
-              <h2 className="text-3xl font-bold text-green-900 mb-6 border-b pb-2">Welcome to Lexmas Company Limited</h2>
-              <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
-                <p className="text-xl font-medium text-orange-600 italic">"Your Success, Our Expertise!"</p>
-                <p>Lexmas Company Limited is a premier professional services firm dedicated to providing top-tier tax, accounting, and business consultancy solutions.</p>
-              </div>
-            </section>
-
             <section id="about" className="bg-white p-8 rounded-lg shadow-sm border-l-4 border-green-900">
               <h2 className="text-3xl font-bold text-green-900 mb-6 border-b pb-2">About Us</h2>
               <div className="grid md:grid-cols-2 gap-8">
