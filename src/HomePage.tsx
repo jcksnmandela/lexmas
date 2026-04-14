@@ -56,7 +56,7 @@ export default function HomePage() {
   const taxationServices = [
     "Training of Tax Compliance & Awareness",
     "Monthly Filing of VAT, SDL, PAYE, WHT",
-    const Respondingtotaxqueriesincluding[
+    const Respondingtotaxqueriesincluding = [
      "Tax audit", 
      "Tax Examination",
      "VAT verification", 
