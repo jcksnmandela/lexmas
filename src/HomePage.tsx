@@ -54,23 +54,22 @@ export default function HomePage() {
   };
 
   const taxationServices = [
-    "Training of Tax Compliance & Awareness",
-    "Monthly Filing of VAT, SDL, PAYE, WHT",
-    const Respondingtotaxqueriesincluding = [
-     "Tax audit", 
-     "Tax Examination",
-     "VAT verification", 
-     "Transfer price audit", 
-     "Demand notices", 
-     "Tax position",
-    ];
-    "VAT Verification & Objections",
-    "Transfer Pricing Documents",
-    "Demand Notices & Tax Objection Position",
-    "Amicable Settlement of Tax Queries",
-    "Application for Waiver of Interest & Penalties",
-    "Review of Financial Statements before TRA",
-    "Tax Planning & Advisory"
+    "Training of tax compliances and awareness",
+    "Monthly filing of VAT, SDL, PAYE, and WHT",
+    "Responding to tax queries including: Tax audit, Tax Examination, VAT verification, Transfer price audit, Demand notices, Tax position",
+    "Preparation of transfer price documents",
+    "Amicably settlement of tax queries / out of court settlement",
+    "Application for waiver of interest and penalties",
+    "Objection and appeal of tax assessments issued by TRA",
+    "Review of financial statements before submitted to TRA",
+    "Tax health checks",
+    "Monthly reconciliation of VAT vs. bank deposits vs EFD receipts",
+    "Tax Advisory services",
+    "Annual filing of return of Income-ROI",
+    "Tax planning",
+    "Tax clearance application",
+    "Tax computation as per Income Tax Act",
+    "Capital gains computation"
   ];
 
   const accountingServices = [
