@@ -73,24 +73,28 @@ export default function HomePage() {
   ];
 
   const accountingServices = [
-    "Preparation of Annual Financial Statements",
-    "Audit & Compliance Review",
-    "Tax Risk Assessment",
-    "Financial Statements for Bank Loans",
-    "Directors & Governance Reports",
-    "Assets Register Management",
-    "Financial Manuals & Policies",
-    "Monthly Reconciliation (VAT vs Bank)",
-    "Financial Analysis & Reporting"
+    "Preparation of annual financial statements for TRA",
+    "Audit of annual financial statements",
+    "Review of financial statements compliance in terms of IFRSs, IASs, IPSAs and TFRS1 compliance",
+    "Review of tax exposure/risk before submitted to TRA",
+    "Training on Preparation of financial statements Preparation and booking keeping",
+    "Preparation of financial statements for loan application to banks",
+    "Preparation of comprehensive directors report and report of those charged by governance",
+    "Assets register management and its usefulness",
+    "Preparation of financial manual and polices",
+    "Bank reconciliation preparation and training",
+    "Account receivable and payable management and training"
   ];
 
   const consultancyServices = [
-    "BRELA Registration",
-    "TIC Certificate of Incentives",
-    "Business Licenses",
-    "Memorandum & Articles of Association",
-    "Business Plan Development",
-    "HR Services & Payroll"
+    "BRELA registration",
+    "Preparation of memorandum and articles of association",
+    "Application of certificate of incentives from Tanzania Investment Centre",
+    "Business license application",
+    "Training on business management",
+    "Marketing services",
+    "HR services",
+    "Business liquidation/dissolution guidance"
   ];
 
   const handleSearch = async (e: FormEvent) => {
@@ -163,7 +167,7 @@ export default function HomePage() {
             </div>
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-green-900 leading-tight uppercase">LEXMAS COMPANY LIMITED</h1>
-              <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">Tax and Financial Excellence</p>
+              <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">Excellence in tax and accountancy services</p>
             </div>
           </div>
           <form onSubmit={handleSearch} className="relative w-full md:w-80 flex items-center gap-2">
@@ -211,13 +215,13 @@ export default function HomePage() {
                   <h3 className="text-xl font-bold text-orange-600 flex items-center gap-2">
                     <CheckCircle size={20} /> Our Vision
                   </h3>
-                  <p className="text-gray-700">To be the leading provider of innovative tax and financial solutions.</p>
+                  <p className="text-gray-700">To be the leading provider of innovative tax, corporate, and financial reporting solutions.</p>
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-orange-600 flex items-center gap-2">
                     <CheckCircle size={20} /> Our Mission
                   </h3>
-                  <p className="text-gray-700">To deliver exceptional, professional, and ethical financial and consultancy services.</p>
+                  <p className="text-gray-700">To deliver exceptional, professional, and ethical accounting and tax consultancy services.</p>
                 </div>
               </div>
             </section>
@@ -231,14 +235,14 @@ export default function HomePage() {
                     onClick={() => setFilterCategory(cat)}
                     className={`px-4 py-2 rounded-full text-sm font-bold transition-colors cursor-pointer ${filterCategory === cat ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
                   >
-                    {cat}
+                    {cat === 'Accounting' ? 'Corporate & Financial' : cat === 'Consultancy' ? 'Other Business' : cat}
                   </button>
                 ))}
               </div>
               <div className="space-y-6">
                 {(filterCategory === 'All' || filterCategory === 'Taxation') && <ServiceBlock title="Taxation Services" services={taxationServices} bgColor="bg-green-50" link="/taxation" />}
-                {(filterCategory === 'All' || filterCategory === 'Accounting') && <ServiceBlock title="Accounting Services" services={accountingServices} bgColor="bg-orange-50" link="/accounting" />}
-                {(filterCategory === 'All' || filterCategory === 'Consultancy') && <ServiceBlock title="General Business Consultancy" services={consultancyServices} bgColor="bg-green-50" link="/consultancy" />}
+                {(filterCategory === 'All' || filterCategory === 'Accounting') && <ServiceBlock title="Corporate and financial accountanting services" services={accountingServices} bgColor="bg-orange-50" link="/accounting" />}
+                {(filterCategory === 'All' || filterCategory === 'Consultancy') && <ServiceBlock title="Other Business Consultancy Services" services={consultancyServices} bgColor="bg-green-50" link="/consultancy" />}
               </div>
             </section>
 
