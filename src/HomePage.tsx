@@ -328,7 +328,7 @@ export default function HomePage() {
             <h4 className="text-xl font-bold border-b border-orange-500 pb-2 inline-block">Contact Info</h4>
             <ul className="text-sm text-gray-300 space-y-3">
               <li className="flex items-start gap-3"><Phone size={16} className="text-orange-500 mt-1" /> 0713 375 392 / 0623 453 061</li>
-              <li className="flex items-start gap-3"><Mail size={16} className="text-orange-500 mt-1" /> info@lexmas.co.tz</li>
+              <li className="flex items-start gap-3"><Mail size={16} className="text-orange-500 mt-1" /> info@lexmas.org</li>
               <li className="flex items-start gap-3"><MapPin size={16} className="text-orange-500 mt-1" /> Dar es Salaam, Tanzania</li>
             </ul>
           </div>
